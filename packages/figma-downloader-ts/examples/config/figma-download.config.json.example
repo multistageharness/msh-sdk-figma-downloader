@@ -1,0 +1,4 @@
+{
+  "proxy": "http://****:*****@proxy.corp.example:8080",
+  "sslVerify": false
+}

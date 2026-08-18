@@ -1,0 +1,41 @@
+{
+  "description": "Cross-language parity cases. Each case is run through BOTH the Node and Python CLIs with --mock (offline, deterministic). The harness asserts the two full.json outputs are byte-identical after canonical re-serialization, and that both manifests are schema-valid and field-equal on the compared keys.",
+  "comparedManifestKeys": [
+    "fileKey",
+    "size",
+    "frontierDepth",
+    "batchSize",
+    "concurrency",
+    "idCount",
+    "batchCount",
+    "rechunked",
+    "oversizedLeaves"
+  ],
+  "cases": [
+    {
+      "name": "default-mock",
+      "args": ["--mock", "--keep-parts"],
+      "expect": { "size": "md", "frontierDepth": 2, "idCount": 3 }
+    },
+    {
+      "name": "depth-1",
+      "args": ["--mock", "--depth", "1", "--keep-parts"],
+      "expect": { "frontierDepth": 1, "idCount": 1 }
+    },
+    {
+      "name": "size-large",
+      "args": ["--mock", "--size", "large", "--keep-parts"],
+      "expect": { "size": "large" }
+    },
+    {
+      "name": "batch-1",
+      "args": ["--mock", "--batch-size", "1", "--keep-parts"],
+      "expect": { "batchSize": 1, "batchCount": 3 }
+    },
+    {
+      "name": "rechunk-tiny-budget",
+      "args": ["--mock", "--depth", "2", "--max-part-bytes", "200", "--keep-parts"],
+      "expect": { "frontierDepth": 2 }
+    }
+  ]
+}

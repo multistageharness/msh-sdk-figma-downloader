@@ -1,0 +1,91 @@
+{
+  "name": "Mock Large File",
+  "role": "owner",
+  "lastModified": "2020-01-01T00:00:00Z",
+  "editorType": "figma",
+  "version": "1234567890",
+  "schemaVersion": 0,
+  "document": {
+    "id": "0:0",
+    "name": "Document",
+    "type": "DOCUMENT",
+    "children": [
+      {
+        "id": "0:1",
+        "name": "Page 1",
+        "type": "CANVAS",
+        "children": [
+          {
+            "id": "1:100",
+            "name": "Desktop",
+            "type": "FRAME",
+            "absoluteBoundingBox": { "x": 0, "y": 0, "width": 1280, "height": 3000 },
+            "children": [
+              {
+                "id": "1:101",
+                "name": "Header",
+                "type": "GROUP",
+                "children": [
+                  { "id": "1:102", "name": "Logo", "type": "RECTANGLE", "absoluteBoundingBox": { "x": 0, "y": 0, "width": 100, "height": 40 } },
+                  { "id": "1:103", "name": "Nav", "type": "RECTANGLE", "absoluteBoundingBox": { "x": 0, "y": 0, "width": 100, "height": 40 } }
+                ]
+              },
+              {
+                "id": "1:104",
+                "name": "Body",
+                "type": "GROUP",
+                "children": [
+                  { "id": "1:105", "name": "Hero", "type": "RECTANGLE", "absoluteBoundingBox": { "x": 0, "y": 0, "width": 100, "height": 40 } },
+                  { "id": "1:106", "name": "Card", "type": "RECTANGLE", "absoluteBoundingBox": { "x": 0, "y": 0, "width": 100, "height": 40 } }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "1:200",
+            "name": "Tablet",
+            "type": "FRAME",
+            "absoluteBoundingBox": { "x": 0, "y": 0, "width": 1280, "height": 3000 },
+            "children": [
+              {
+                "id": "1:201",
+                "name": "Header",
+                "type": "GROUP",
+                "children": [
+                  { "id": "1:202", "name": "Logo", "type": "RECTANGLE", "absoluteBoundingBox": { "x": 0, "y": 0, "width": 100, "height": 40 } }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "1:300",
+            "name": "Mobile",
+            "type": "FRAME",
+            "absoluteBoundingBox": { "x": 0, "y": 0, "width": 1280, "height": 3000 },
+            "children": [
+              {
+                "id": "1:301",
+                "name": "Header",
+                "type": "GROUP",
+                "children": [
+                  { "id": "1:302", "name": "Logo", "type": "RECTANGLE", "absoluteBoundingBox": { "x": 0, "y": 0, "width": 100, "height": 40 } }
+                ]
+              },
+              {
+                "id": "1:303",
+                "name": "Footer",
+                "type": "GROUP",
+                "children": [
+                  { "id": "1:304", "name": "Links", "type": "RECTANGLE", "absoluteBoundingBox": { "x": 0, "y": 0, "width": 100, "height": 40 } }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "components": {},
+  "componentSets": {},
+  "styles": {}
+}

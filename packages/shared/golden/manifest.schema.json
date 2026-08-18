@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "figma-downloader manifest",
+  "type": "object",
+  "required": [
+    "fileKey",
+    "size",
+    "frontierDepth",
+    "batchSize",
+    "concurrency",
+    "idCount",
+    "batchCount",
+    "downloaded",
+    "resumedSkipped",
+    "rechunked",
+    "oversizedLeaves",
+    "parts"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "fileKey": { "type": "string" },
+    "size": { "type": "string", "enum": ["sm", "md", "large", "xl", "xxxxl"] },
+    "frontierDepth": { "type": "integer", "minimum": 0 },
+    "batchSize": { "type": "integer", "minimum": 1 },
+    "concurrency": { "type": "integer", "minimum": 1 },
+    "idCount": { "type": "integer", "minimum": 0 },
+    "batchCount": { "type": "integer", "minimum": 0 },
+    "downloaded": { "type": "integer", "minimum": 0 },
+    "resumedSkipped": { "type": "integer", "minimum": 0 },
+    "rechunked": { "type": "integer", "minimum": 0 },
+    "oversizedLeaves": { "type": "array", "items": { "type": "string" } },
+    "parts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["file", "ids", "sha", "bytes"],
+        "additionalProperties": true,
+        "properties": {
+          "file": { "type": "string" },
+          "ids": { "type": "array", "items": { "type": "string" } },
+          "sha": { "type": "string" },
+          "bytes": { "type": "integer", "minimum": 0 },
+          "elapsedMs": { "type": "number", "minimum": 0 }
+        }
+      }
+    }
+  }
+}
