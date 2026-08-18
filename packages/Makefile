@@ -1,8 +1,8 @@
 ##
 ## packages/Makefile — umbrella for the polyglot figma-downloader twins.
 ##
-##   figma-downloader-ts   zero-dependency Node ESM
-##   figma-downloader-py   stdlib-only Python 3.11+
+##   ts/                  zero-dependency Node ESM
+##   py/                  stdlib-only Python 3.11+
 ##   shared/               language-neutral fixtures, goldens, parity cases
 ##   parity/               cross-language parity gate
 ##
@@ -10,8 +10,8 @@
 ## lockfile. `parity` runs both CLIs over the shared cases and diffs their output.
 ##
 
-TS_DIR := figma-downloader-ts
-PY_DIR := figma-downloader-py
+TS_DIR := ts
+PY_DIR := py
 
 .DEFAULT_GOAL := help
 

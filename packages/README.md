@@ -12,15 +12,15 @@ twin packages** with identical behavior:
 
 | Package                                        | Runtime                      | Deps                      |
 | ---------------------------------------------- | ---------------------------- | ------------------------- |
-| [`figma-downloader-ts`](./figma-downloader-ts) | Node ESM (`.mjs`), Node ≥ 20 | **none** (built-ins only) |
-| [`figma-downloader-py`](./figma-downloader-py) | Python ≥ 3.11                | **none** (stdlib only)    |
+| [`ts`](./ts) | Node ESM (`.mjs`), Node ≥ 20 | **none** (built-ins only) |
+| [`py`](./py) | Python ≥ 3.11                | **none** (stdlib only)    |
 
 Shared, language-neutral assets keep the twins honest:
 
 ```
 packages/
-├── figma-downloader-ts/     # Node twin
-├── figma-downloader-py/     # Python twin
+├── ts/     # Node twin
+├── py/     # Python twin
 ├── shared/
 │   ├── fixtures/mock-file.json   # the document both --mock paths serve (byte-identical)
 │   ├── golden/manifest.schema.json
@@ -33,11 +33,11 @@ packages/
 
 ```bash
 # Offline smoke test — drives the real chunk/reconstruct path against a fixture:
-node figma-downloader-ts/bin/figma-download.mjs --mock --pretty --stdout
-( cd figma-downloader-py && python3 -m figma_downloader --mock --pretty --stdout )
+node ts/bin/figma-download.mjs --mock --pretty --stdout
+( cd py && python3 -m figma_downloader --mock --pretty --stdout )
 
 # Live: fetch a large file in chunks (needs FIGMA_TOKEN):
-FIGMA_TOKEN=figd_xxx node figma-downloader-ts/bin/figma-download.mjs \
+FIGMA_TOKEN=figd_xxx node ts/bin/figma-download.mjs \
   --url https://www.figma.com/design/<KEY>/Name --size xl --resume
 ```
 
